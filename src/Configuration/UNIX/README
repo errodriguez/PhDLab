@@ -1,0 +1,38 @@
+#
+#
+# README v1.0.0
+#
+# Configuration needed (main symbols and settings) for a Unix BASH environment.
+# Lines to put in .bash_profile files.
+# 
+## IPN-CIC:Eduardo René Rodrígue Ávila:PhD Research:July 2017
+###############################################################################
+
+#===============================================================================
+#- GLOBAL VARIABLES AND FLAGS
+#===============================================================================
+
+#- For a VirtualBox machine with a Unix-type operating system using shared
+#& folders.
+export PHDSYS=VBX
+export PHDLAB=/media/sf_PhDLab
+export PHDENV=$PHDLAB/Administration/Configuration/UNIX
+
+
+#- For a Mac (with OS X or macOS) implementation.
+export PHDSYS=MAC
+export PHDLAB=<Path to installation>/PhDLab
+export PHDENV=$PHDLAB/Administration/Configuration/UNIX
+
+
+#- For a Unix-type implementation.
+export PHDSYS=UNX
+export PHDLAB=<Path to installation>/PhDLab
+export PHDENV=$PHDLAB/Administration/Configuration/UNIX
+
+
+#- For a CentOS implementation.
+export PHDSYS=COS
+export PHDLAB=<Path to installation>/PhDLab
+export PHDENV=$PHDLAB/Administration/Configuration/UNIX
+###############################################################################
