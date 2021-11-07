@@ -190,6 +190,8 @@ function Message {
          ;;
     149) m="Reseting log file ($1)."
          ;;
+    236) m="Missing or unknown HTTP $2 method."
+         ;;
     237) m="A REST call name is required."
          ;;
     238) m="A task code or name is required."
