@@ -19,7 +19,8 @@
 
 #- Script's main variables and constants.
 #+ OPTIONS.- Script's command line options.
-#+ VERBOSE.- Show everything.
+#+ VERBOSE.- Show additional information on script execution, redirected to
+#+           STDERR.
 #+ QUIET  .- Supressed process messages and status information.
 #+ ACCOUNT.- Account requesting access.
 #+ ALIAS.- Shortcut for an URL resource.
@@ -146,13 +147,17 @@ if ! [ $STATUS ]
 fi
 
 if [[ $VERBOSE ]]
-   then echo $OASTR
-fi
+   then echo "Oauth string:"
+        echo $OASTR
+        echo ""
+        echo "curl:"
+        echo ""
+fi >&2
 
 echo $OASTR | xargs curl $VERBOSE $QUIET
+STATUS=$?
 echo
 
-STATUS=$?
 if ! [ $STATUS ]
    then echo "... error $STATUS at REST API call."
 fi
