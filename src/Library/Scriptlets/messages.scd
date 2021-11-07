@@ -1,28 +1,26 @@
 #! /usr/bin/env bash
 #
-# messages.scd v1.0.0
+# messages.scd v1.0.1
 #
 # Generic functions to display formatted messages in $STDERR and to write
 # records in log files.
 #
-## IPN-CIC:Eduardo René Rodríguez Ávila:PhD Research:July 2017
-###############################################################################
+# 2021 Nov:Restoration effort::Mexico City  
+# 2017 Jul:Eduardo René Rodríguez Ávila's PhD Research:IPN-CIC:Mexico City
+################################################################################
 
 #==============================================================================
 #- FUNCTIONS DECLARATION
 #==============================================================================
 
-#. Logger.- Sends a formatted timestamp value for log record purposes to
-#& wherever $PATH_LOG points to ($STDERR as default). So, it requires a
-#& previously exported PATH_LOG variable. If there is any problem writing to
-#& the log, the message is sent to $STDERR anyway.
-
-#- This function checks the $PATH_LOG value and if this value is an existing
-#& file. Then generates a timestamp and echoes it to $PATH_LOG. Any problem
-#& related with the log file is reported and a non-zero status value is
-#& returned.
-
 function Logger {
+#* Sends a formatted timestamp value for log record purposes to whatever 
+#& $PATH_LOG points to ($STDERR as default). So, it requires a previously
+#& exported PATH_LOG variable. If there is any problem writing to the log, the
+#& message is sent to $STDERR anyway.  This function generates a timestamp and
+#& echoes it to $PATH_LOG. Any problem related with the log file is reported
+#& and a non-zero status value is returned.
+
   if (( ${#1} == 0 ))    #+ Nothing to report? 
      then return 1       #& Just a return 1 as friendly reminder.
   fi 
@@ -49,12 +47,12 @@ function Logger {
 }
 #==============================================================================
 
-#. Message.- Displays or records (or both) a string message and sets a status
+function Message {
+#* Message.- Displays or records (or both) a string message and sets a status
 #& value. This function includes a local function which provides information
 #& on its invocation (for development and debugging purposes). By default
 #& messages are show in $SDTERR and no recorded.
 
-function Message {
   function Info {
            echo ""
            echo "Message [-l | -r] [NUMBER | STRING]"
@@ -78,15 +76,15 @@ function Message {
   }
  
   local OPTIND OPTIONS REC LOG opt
-  OPTIONS="lrh"   #. Valid invocation options:
-                  #& -r Shows the record in console and records it in the log.
-                  #& -l No message is shown in console, it is recorded only.
-                  #& -h Shows usage information.
-  REC=false       #+ REC f. Permanent recording of messages in log.
-  LOG=false       #& LOG f. Log entry-only action.
+  OPTIONS="lrh"   #- Valid invocation options:
+                  #+ -r Shows the record in console and records it in the log.
+                  #+ -l No message is shown in console, it is recorded only.
+                  #+ -h Shows usage information.
+  REC=false       #- REC f. Permanent recording of messages in log.
+  LOG=false       #- LOG f. Log entry-only action.
 
 
-  #* Invocation options are validated.
+  #- Invocation options are validated.
   while getopts $OPTIONS opt
   do
      case "$opt" in
@@ -104,8 +102,8 @@ function Message {
     
   shift $((OPTIND-1))
 
-  #+ First argument is set as return code value. This value is used as key to
-  #& look up for the string message.
+  #- First argument is set as return code value. This value is used as key to
+  #+ look up for the string message.
   status=$1
   case "$1" in
       0) m="OK ($@)."
@@ -228,11 +226,11 @@ function Message {
          ;;
     255) m="Usage display raised by an error condition ($@)."
          ;;
-      #* Any argument value not defined in the function is taken as a string
-      #& to be displayed as is (numeric or not). In that case, return code
-      #& will be zero.
-      #* If no argument is provided an ellipsis is showed, and a zero value
-      #& will be returned too.
+    #- Any argument value not defined in the function is taken as a string
+    #+ to be displayed as is (numeric or not). In that case, return code
+    #+ will be zero.
+    #+ If no argument is provided an ellipsis is showed, and a zero value
+    #+ will be returned too.
       *) if [ ${#@} -ne "0" ]
             then m="$@"
                  status=0;
@@ -241,16 +239,16 @@ function Message {
          fi
   esac
 
-  #+ If $LOG flag is set (true), Logger function is summoned and string message
-  #& is passed to be recorded. Nothing will be shown on the console.
+  #- If $LOG flag is set (true), Logger function is summoned and string message
+  #+ is passed to be recorded. Nothing will be shown on the console.
   if $LOG
      then Logger "$m"
           return $status
-     else #+ By default, timestamp and string message are shown in $STDERR. 
-          #& This is only supressed by $LOG flag. 
+     else #- By default, timestamp and string message are shown in $STDERR. 
+          #+ This is only supressed by $LOG flag. 
           Timestamp "$m" >&2
-          #+ If $REC flag is set (true) string and timestamp are recorded in 
-          #& the log.
+          #- If $REC flag is set (true) string and timestamp are recorded in 
+          #+ the log.
           if $REC
              then Logger "$m"
           fi
@@ -259,11 +257,11 @@ function Message {
 }
 #==============================================================================
 
-#. Timestamp.- Generates a timestamp taking into account date command 
+function Timestamp {
+#* Timestamp.- Generates a timestamp taking into account date command 
 #& variations with $PHDSYS value and echoes it adding the first argument 
 #& passed to this function.
 
-function Timestamp {
   if [ $PHDSYS == "MAC" ]
      then echo $(date -u +"%Y.%m.%d %H:%M:%S") [${0##*/}] $@ 
      else echo $(date -u --rfc-3339="seconds") [${0##*/}] $@
@@ -271,9 +269,9 @@ function Timestamp {
 }
 #==============================================================================
 
-#. Logging.- Validates and prepares what is necessary for Logger function.
-#& Receives path, file name and, optionally, a reset flag.
 function Logging {
+#* Logging.- Validates and prepares what is necessary for Logger function.
+#& Receives path, file name and, optionally, a reset flag.
   if (( $# < 2 ))
      then return 249
   fi
