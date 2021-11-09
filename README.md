@@ -32,15 +32,15 @@ These scripts were developed for BASH v4.0+ and has been tested with BASH v5.0 i
 
 Current status in restoration effort:
 
-  .
-  +-- src
-      |-- Configuration
-      |   +-- UNIX
-      |-- Library
-      |   |-- API
-      |   |-- Keychain
-      |   +-- Scriptlets
-      +-- Tools
+    .
+    +-- src
+        |-- Configuration
+        |   +-- UNIX
+        |-- Library
+        |   |-- API
+        |   |-- Keychain
+        |   +-- Scriptlets
+        +-- Tools
 
 ## ENVIRONMENT VARIABLES
 
