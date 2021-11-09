@@ -22,9 +22,10 @@ These scripts were developed for BASH v4.0+ and has been tested with BASH v5.0 i
 
 - OS X and macOS systems require:
 
-  + A `sysvbanner` port.
+  + A `sysvbanner` and `tree` port.
 
     `$ brew install kuperman/sysvbanner/sysvbanner`
+    `$ brew install tree`
 
   + `jq` utility. It can be installed with brew or compiled from source.
 
@@ -41,6 +42,7 @@ Current status in restoration effort:
         |   |-- Keychain
         |   +-- Scriptlets
         +-- Tools
+
 
 ## ENVIRONMENT VARIABLES
 
