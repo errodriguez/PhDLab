@@ -7,7 +7,6 @@ As you will read below, there is an ongoing restoration effort. Currently, only 
 
 In general, both for the `main` branch and sub-branches derived from it, the software is presented as is, no guarantees are given, you test them at your own risk and no responsibility is assumed for the results or effects that may arise.
 
-º
 ## Backgound
 
 This set of scripts were developed between 2016 thru 2018 as part of my PhD research at the IPN Centre for Computing Research (Centro de Investigación en Computación del Instituto Politécnico Nacional) at Mexico City, Mexico. There were not intended to be released to the public since they were developed with a very much specific idea and purpose in mind.
