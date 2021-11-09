@@ -33,14 +33,14 @@ These scripts were developed for BASH v4.0+ and has been tested with BASH v5.0 i
 Current status in restoration effort:
 
   .
-  `-- src
+  +-- src
       |-- Configuration
-      |   `-- UNIX
+      |   +-- UNIX
       |-- Library
       |   |-- API
       |   |-- Keychain
-      |   `-- Scriptlets
-      `-- Tools
+      |   +-- Scriptlets
+      +-- Tools
 
 ## ENVIRONMENT VARIABLES
 
