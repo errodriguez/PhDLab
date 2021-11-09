@@ -30,7 +30,17 @@ These scripts were developed for BASH v4.0+ and has been tested with BASH v5.0 i
 
 ## DIRECTORY AND FILES
 
-To be added
+Current status in restoration effort:
+
+.
+`-- src
+    |-- Configuration
+    |   `-- UNIX
+    |-- Library
+    |   |-- API
+    |   |-- Keychain
+    |   `-- Scriptlets
+    `-- Tools
 
 ## ENVIRONMENT VARIABLES
 
