@@ -4,8 +4,9 @@
 #
 # Main symbols and settings for a Unix BASH environment.
 # 
-## IPN-CIC:Eduardo René Rodrígue Ávila:PhD Research:July 2017
-###############################################################################
+# 2021 Nov:Restoration effort::Mexico City  
+# 2017 Jul:Eduardo René Rodríguez Ávila's PhD Research:IPN-CIC:Mexico City
+################################################################################
 
 #===============================================================================
 #- GLOBAL VARIABLES AND FLAGS
@@ -21,8 +22,7 @@ export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
 
 #+ PhD project specific settings.
 
-export PHDAUT="Eduardo René Rodríguez Ávila"
-export PHDVER="1.0"
+export PHDVER="1.1"
 export PHDSYS=MAC
 export PHDLAB=$PWD
 export PHDSRC=$PHDLAB/src

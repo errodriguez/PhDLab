@@ -5,7 +5,9 @@
 # Twitter's REST API v1.1 services. Receives API method alias and returns
 # resource URL.
 #
-#* IPN-CIC:Eduardo René Rodríguez Ávila:PhD Research:July 2017.
+# 2021 Nov:Restoration effort::Mexico City  
+# 2017 Jul:Eduardo René Rodríguez Ávila's PhD Research:IPN-CIC:Mexico City
+################################################################################
 #==============================================================================
 #- SETTING GLOBAL VARIABLES AND FLAGS.
 #==============================================================================
@@ -27,7 +29,7 @@ SEARCH="search"
 case $1 in
      HOME)    echo -n "GET" $HTTP"://"$URI"/"$VERSION"/"$STATUS"/home_timeline.json"
               exit 0
-	          ;;   
+              ;;   
      USER)    echo -n "GET" $HTTP"://"$URI"/"$VERSION"/"$STATUS"/user_timeline.json"
               exit 0
               ;;
@@ -48,5 +50,5 @@ case $1 in
               ;;
      *)       echo -n "GET" $HTTP"://"$URI"/"$VERSION"/"
               exit 253
-		      ;;
+              ;;
 esac 
