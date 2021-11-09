@@ -54,7 +54,7 @@ After this, three new commands will be available:
 + `tree3`.- A shortcut for the `tree` command with a useful configuration.
 + `lab`.- A shortcut to quickly go to the root directory of the project.
 
-## USAGE
+## COMPONENTS USAGE
 
 ### `console.sh` script
 
@@ -65,3 +65,11 @@ The `console.sh` script is a wrapper for many of the elements of this project to
 where `<user>` must be replaced with the Twitter account name that will be use to access Twitter API. Alternatively, `-A` option can be replaced with the `PHDACC` variable. It can be previously defined or used inline.
 
 `$ PHDACC=<user> $PHDTLS/console.sh GET https://api.twitter.com/1.1/statuses/user_timeline.json`
+
+## OUTPUT PROCESSING WITH `jq`
+
+Returned results from Twitter API services can be from a REST query or a streaming flow. When they comes from a REST request they are return as an array. For example for the request of `https://api.twitter.com/1.1/statuses/user_timeline.json` with the `$PHDTLS/console.sh` script, what is returned is an array with tweets of the timeline, while when the request is through a streaming endpoint tweets are returned individually. REST results can put in the same way as streaming with an aditional processing with `jq`, for this case:
+
+`$ PHDACC=<user> $PHDTLS/console.sh GET https://api.twitter.com/1.1/statuses/user_timeline.json | jq '.[]'` 
+
+So, output can be stored and processed in the same way as if it comes from a streaming endpoint.
