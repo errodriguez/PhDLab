@@ -28,10 +28,10 @@ export PHDLAB=$PWD
 export PHDSRC=$PHDLAB/src
 export PHDCFG=$PHDSRC/Configuration
 export PHDENV=$PHDCFG/UNIX
+export PHDSEC=$PHDCFG/Keychain
 export PHDLIB=$PHDSRC/Library
 export PHDTLS=$PHDSRC/Tools
 export PHDSCR=$PHDLIB/Scriptlets
-export PHDSEC=$PHDLIB/Keychain
 
 #export PHDPRO=$PHDLAB/Production
 #export PHDDAT=$PHDPRO/DATA

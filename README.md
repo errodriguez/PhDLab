@@ -34,14 +34,14 @@ These scripts were developed for BASH v4.0+ and has been tested with BASH v5.0 i
 Current status in restoration effort:
 
     .
-    +-- src
+    `-- src
         |-- Configuration
-        |   +-- UNIX
-        |-- Library
+        |   |-- UNIX
+        |   `-- Keychain
+        +-- Library
         |   |-- API
-        |   |-- Keychain
-        |   +-- Scriptlets
-        +-- Tools
+        |   `-- Scriptlets
+        `-- Tools
 
 + `Configuration`.- Files for initialisation and environment configuration.
 + `Library`.- Scriplets and other components.
@@ -58,7 +58,7 @@ To be added
 
 1. Be sure you have review and meet all requirements.
 2. Clone the project.
-3. If not done yet, generate access and token keys in Twitter. Copy thoose values in a file in `src/Library/Keychain` (see `README` file in this directory for instructions. Name the file with the account name used to generate the keys. File extension must be `.tks`.)
+3. If not done yet, generate access and token keys in Twitter. Copy thoose values in a file in `src/Configuration/Keychain` (see `README` file in this directory for instructions. Name the file with the account name used to generate the keys. File extension must be `.tks`.)
 
 ## ACTIVATION
 
@@ -70,7 +70,7 @@ After this, three new commands will be available:
 
 + `vars`.- Display all variables of this project.
 + `tree3`.- A shortcut for the `tree` command with a useful configuration.
-+ `lab`.- A shortcut to quickly go to the root directory of the project.
++ `phdlab`.- A shortcut to quickly go to the root directory of the project.
 
 ## COMPONENTS USAGE
 
