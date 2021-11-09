@@ -43,6 +43,12 @@ Current status in restoration effort:
         |   +-- Scriptlets
         +-- Tools
 
++ `Configuration`.- Files for initialisation and environment configuration.
++ `Library`.- Scriplets and other components.
++ `Tools`.- Scripts and programs.
+
+
+
 
 ## ENVIRONMENT VARIABLES
 
