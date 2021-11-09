@@ -26,7 +26,7 @@ These scripts were developed for BASH v4.0+ and has been tested with BASH v5.0 i
 
     `$ brew install kuperman/sysvbanner/sysvbanner`
 
-  + `jq` utility.
+  + `jq` utility. It can be installed with brew or compiled from source.
 
 ## DIRECTORY AND FILES
 
@@ -50,9 +50,9 @@ To activate the "environment", from the BASH command line, type:
 
 After this, three new commands will be available:
 
-`vars`.- Display all variables of this project.
-`tree3`.- A shortcut for the `tree` command with a useful configuration.
-`lab`.- A shortcut to quickly go to the root directory of the project.
++ `vars`.- Display all variables of this project.
++ `tree3`.- A shortcut for the `tree` command with a useful configuration.
++ `lab`.- A shortcut to quickly go to the root directory of the project.
 
 ## USAGE
 
