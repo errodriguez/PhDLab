@@ -154,8 +154,7 @@ if [[ $VERBOSE ]]
         echo ""
 fi >&2
 
-echo $OASTR | xargs curl $VERBOSE $QUIET
-STATUS=$?
+echo $OASTR | xargs curl $VERBOSE $QUIET; STATUS=$?
 echo
 
 if ! [ $STATUS ]
