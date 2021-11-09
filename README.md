@@ -58,8 +58,10 @@ After this, three new commands will be available:
 
 ### `console.sh` script
 
-The `console.sh` script is a wrapper for many of the elements of this project to interact with the Twitter API and other scripts of this project. For example, to get the user timeline using the URL resource `https://api.twitter.com/1.1/statuses/user_timeline.json`.
+The `console.sh` script is a wrapper for many of the elements of this project to interact with the Twitter API and other scripts. For example, to get the user timeline using the URL resource `https://api.twitter.com/1.1/statuses/user_timeline.json`.
 
 `$ $PHDTLS/console.sh -A <user> GET https://api.twitter.com/1.1/statuses/user_timeline.json`
 
-where `<user>` must be replaced with the Twitter account name that will be use to access Twitter API.
+where `<user>` must be replaced with the Twitter account name that will be use to access Twitter API. Alternatively, `-A` option can be replaced with the `PHDACC` variable. It can be previously defined or used inline.
+
+`$ PHDACC=<user> $PHDTLS/console.sh GET https://api.twitter.com/1.1/statuses/user_timeline.json`

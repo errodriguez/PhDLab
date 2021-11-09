@@ -34,7 +34,7 @@
 OPTIONS="hsva:A:"
 VERBOSE=""
 QUIET=""
-ACCOUNT=""
+ACCOUNT=${PHDACC:-""}
 ALIAS=""
 METHOD=""
 RESOURCE=""
@@ -46,8 +46,8 @@ OASTR=""
 function Usage {
 #* Display how the script must be invoked and which options 
 #& are available.
-  echo "Usage: "$(basename $0)" [OPTIONS]* -A ACCOUNT -a ALIAS [PARAMETERS]*"
-  echo "                        [OPTIONS]* -A ACCOUNT METHOD RESOURCE"
+  echo "Usage: "$(basename $0)" [OPTIONS]* [-A ACCOUNT] -a ALIAS [PARAMETERS]*"
+  echo "                        [OPTIONS]* [-A ACCOUNT] METHOD RESOURCE"
   echo ""
   echo "OPTIONS:"
   echo "       -v        Verbose mode."
@@ -55,7 +55,9 @@ function Usage {
   echo "       -h        Clear screen to show options and arguments."
   echo ""
   echo "PARAMETERS"
-  echo "       -A        Account requesting the query."
+  echo "       -A        Account requesting the query. If no account is given"
+  echo "                 $PHDACC variable value will be used but if this is not"
+  echo "                 set or empty an error arise."
   echo "       -a        Service alias and its parameters."
   echo "       METHOD    HTTP GET or POST method in uppercase"
   echo "       RESOURCE  API Twitter resource URL with necessary parameters as"
@@ -120,6 +122,12 @@ if [[ $ALIAS == "" ]]
         esac
 fi
 
+if ! [[ $ACCOUNT ]]
+   then STATUS=5
+        Message $STATUS
+        exit $STATUS
+fi
+
 #=============================================================================
 
 #
@@ -159,7 +167,7 @@ echo
 
 if ! [ $STATUS ]
    then echo "... error $STATUS at REST API call."
-fi
+fi >&2
 
 exit $STATUS 
 ################################################################################
