@@ -3,8 +3,11 @@ A set of BASH scripts and other scriptlets to easily interact with Twitter's API
 
 ## Current status
 
-As you
+As you will read below, there is an ongoing restoration effort. Currently, only the items in the `main` branch are the only ones that have been restored and tested to work as originally intended. Items that are being reviewed and being restored are in the `restoration` branch. You can check them out, but there is no guarantee what they do or how they work.
 
+In general, both for the `main` branch and sub-branches derived from it, the software is presented as is, no guarantees are given, you test them at your own risk and no responsibility is assumed for the results or effects that may arise.
+
+º
 ## Backgound
 
 This set of scripts were developed between 2016 thru 2018 as part of my PhD research at the IPN Centre for Computing Research (Centro de Investigación en Computación del Instituto Politécnico Nacional) at Mexico City, Mexico. There were not intended to be released to the public since they were developed with a very much specific idea and purpose in mind.
