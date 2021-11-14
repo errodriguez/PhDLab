@@ -6,6 +6,7 @@
 # REST API services. Based on Twitter's API documentation:
 #
 # https://dev.twitter.com/rest/reference/get/statuses/home_timeline
+# https://dev.twitter.com/oauth
 #
 # Arguments:
 #       $1    Twitter's account to be queried.
