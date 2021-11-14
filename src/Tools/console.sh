@@ -47,7 +47,7 @@ function Usage {
 #* Display how the script must be invoked and which options 
 #& are available.
   echo "Usage: "$(basename $0)" [OPTIONS]* [-A ACCOUNT] -a ALIAS [PARAMETERS]*"
-  echo "                        [OPTIONS]* [-A ACCOUNT] METHOD RESOURCE"
+  echo "   or  "$(basename $0)" [OPTIONS]* [-A ACCOUNT] METHOD RESOURCE [PARAMETERS]*"
   echo ""
   echo "OPTIONS:"
   echo "       -v        Verbose mode."
