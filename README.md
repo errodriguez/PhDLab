@@ -1,3 +1,4 @@
+![Project logo](Resorces/Images/PhDLab-logo.png)
 # PhDLab
 A set of BASH scripts and other scriptlets to easily interact with Twitter's API from the command line.
 
