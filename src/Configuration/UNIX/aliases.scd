@@ -20,6 +20,6 @@
 
 alias vars='{ ( env | grep ^PHD | sort -t= -k2 ); alias vars tree3 ; } | more'
 alias tree3='tree -L 3 -d'
-alias lab='cd $PHDLAB'
+alias phdlab='cd $PHDLAB'
 
 ###############################################################################
