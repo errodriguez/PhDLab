@@ -50,10 +50,11 @@ Current status in restoration effort:
 
 
 
-
 ## ENVIRONMENT VARIABLES
 
 To be added
+
+
 
 ## INSTALLATION
 
@@ -61,7 +62,11 @@ To be added
 2. Clone the project.
 3. If not done yet, generate access and token keys in Twitter. Copy thoose values in a file in `src/Configuration/Keychain` (see `README` file in this directory for instructions. Name the file with the account name used to generate the keys. File extension must be `.tks`.)
 
-## ACTIVATION
+## A FIRST GLIMPSE ON COMPONENTS USAGE
+
+This is quick review and example on the usage of this library of scripts, functions and utilities. A much more detailed explanations on usage and examples are provided in the `User_Manual.md` file.
+
+### Activation
 
 To activate the "environment", from the BASH command line, type:
 
@@ -73,7 +78,6 @@ After this, three new commands will be available:
 + `tree3`.- A shortcut for the `tree` command with a useful configuration.
 + `phdlab`.- A shortcut to quickly go to the root directory of the project.
 
-## COMPONENTS USAGE
 
 ### `console.sh` script
 
@@ -85,7 +89,7 @@ where `<user>` must be replaced with the Twitter account name that will be use t
 
 `$ PHDACC=<user> $PHDTLS/console.sh GET https://api.twitter.com/1.1/statuses/user_timeline.json`
 
-## OUTPUT PROCESSING WITH `jq`
+### Output processing with `jq`
 
 Returned results from Twitter API services can be from a REST query or a streaming flow. When they comes from a REST request they are return as an array. For example for the request of `https://api.twitter.com/1.1/statuses/user_timeline.json` with the `$PHDTLS/console.sh` script, what is returned is an array with tweets of the timeline, while when the request is through a streaming endpoint tweets are returned individually. REST results can put in the same way as streaming with an aditional processing with `jq`, for this case:
 
