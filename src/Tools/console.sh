@@ -61,16 +61,17 @@ function Usage {
   echo "       -a        Service alias and its parameters."
   echo "       METHOD    HTTP GET or POST method in uppercase"
   echo "       RESOURCE  API Twitter resource URL with necessary parameters as"
-  echo "                 may be required."
+  echo "                 may be required (see exaples)."
   echo ""
   echo "Examples:"
   echo ""
-  echo $(basename $0)" -a xyz GET https://api.twitter.com/1.1/statuses/user_timeline.json"
+  echo "$ "$(basename $0)" -a xyz GET https://api.twitter.com/1.1/statuses/user_timeline.json"
   echo ""
-  echo "if parameters are requiered, they have to be properly added to the URL"
-  echo "string."
+  echo "if parameters are requiered, they have to be added in key-value pairs:"
   echo ""
-  echo "https://.../statuses/user_timeline.json?screen_name=twitterapi&count=2"
+  echo "$ $(basename $0) ... https://.../user_timeline.json user_id 12 count 2"
+  echo ""
+  echo "This example has been abbreviated for presentation."
 }
 
 #===========================================================================
@@ -106,8 +107,9 @@ done
 
 #- Arguments passed are validated
 shift $((OPTIND-1))
+
 if [[ $ALIAS == "" ]] 
-   then if [[ $# -ne 2 ]]
+   then if [ $(($#%2)) -ne 0 ]
            then STATUS=249
                 Message $STATUS
                 Usage
@@ -142,12 +144,13 @@ if [[ $ALIAS ]]
         fi
 else METHOD=$1
      RESOURCE=$2
+     shift 2
 fi
 
 # 
 #- 3.- The call is made to the API resource.
 #  
-OASTR=$($PHDSCR/OAuth.sh $ACCOUNT $METHOD $RESOURCE)
+OASTR=$($PHDSCR/OAuth.sh $ACCOUNT $METHOD $RESOURCE $@)
 STATUS=$?
 
 if ! [ $STATUS ]
@@ -158,7 +161,7 @@ if [[ $VERBOSE ]]
    then echo "Oauth string:"
         echo $OASTR
         echo ""
-        echo "curl:"
+        echo "curl output:"
         echo ""
 fi >&2
 
