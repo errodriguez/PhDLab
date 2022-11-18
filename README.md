@@ -30,6 +30,12 @@ These scripts were developed for BASH v4.0+ and has been tested with BASH v5.0 i
 
   + `jq` utility. It can be installed with brew or compiled from source.
 
+- Amazon Linux
+
+  + `figlet` command
+
+    `$ sudo amazon-linux-extras install epel -y`
+
 ## DIRECTORIES AND FILES
 
 Current status in restoration effort:

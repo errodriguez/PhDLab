@@ -4,6 +4,7 @@
 #
 # Main symbols and settings for a Unix BASH environment.
 # 
+# 2022 Nov:AWS linux adaptation:UPIICSA:Mexico City
 # 2021 Nov:Restoration effort::Mexico City  
 # 2017 Jul:Eduardo René Rodríguez Ávila's PhD Research:IPN-CIC:Mexico City
 ################################################################################
@@ -22,8 +23,8 @@ export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
 
 #+ PhD project specific settings.
 
-export PHDVER="1.1"
-export PHDSYS=MAC
+export PHDVER="1.2"
+export PHDSYS=$(uname)
 export PHDLAB=$PWD
 export PHDSRC=$PHDLAB/src
 export PHDCFG=$PHDSRC/Configuration

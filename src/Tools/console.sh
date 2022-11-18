@@ -150,7 +150,7 @@ fi
 # 
 #- 3.- The call is made to the API resource.
 #  
-OASTR=$($PHDSCR/OAuth.sh $ACCOUNT $METHOD $RESOURCE $@)
+OASTR=$($PHDSCR/oauth.sh $ACCOUNT $METHOD $RESOURCE $@)
 STATUS=$?
 
 if ! [ $STATUS ]
