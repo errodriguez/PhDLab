@@ -58,6 +58,7 @@ case $PHDSYS in
      VBX) echo "export PHDSYS=VBX"
           echo "export PHDLAB=/media/sf_PhDLab"
           echo "export PHDENV=/media/sf_PhDLab/src/Configuration/UNIX"
+	  echo "export PHDSEC=/media/sf_PhDLab/src/Configuration/Keychain"
           echo "export PHDSCR=/media/sf_PhDLab/src/Library/Scriptlets"
           ;;
 
@@ -66,6 +67,7 @@ case $PHDSYS in
           echo "export PHDSYS=MAC"
           echo "export PHDLAB=$PHDENV"
           echo "export PHDENV=$PHDLAB/src/Configuration/UNIX"
+	  echo "export PHDSEC=$PHDLAB/src/Configuration/Keychain"
           echo "export PHDSCR=$PHDLAB/src/Library/Scriptlets"
           ;;
 
@@ -74,11 +76,13 @@ case $PHDSYS in
           echo "export PHDSYS=UNX"
           echo "export PHDLAB=$PHDENV/PhDLab"
           echo "export PHDENV=$PHDLAB/src/Configuration/UNIX"
+	  echo "export PHDSEC=$PHDLAB/src/Configuration/Keychain"
           echo "export PHDSCR=$PHDLAB/src/Library/Scriptlets"
           ;;
     # Generic
        *) echo "export PHDSYS=UNX"
           echo "export PHDLAB=$PHDENV/PhDLab"
+	  echo "export PHDSEC=$PHDLAB/src/Configuration/Keychain"
           echo "export PHDENV=$PHDLAB/src/Configuration/UNIX"
           echo "export PHDSCR=$PHDLAB/src/Library/Scriptlets"
           ;;
