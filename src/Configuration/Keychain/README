@@ -1,4 +1,4 @@
-# Files in this directory shoulde be created with these four lines. Each line
+# Files in this directory should be created with these four lines. Each line
 # is a BASH variable declaration. Between quotes, tokens and secret keys should
 # be paste from the Twitter token access generator page.
 
