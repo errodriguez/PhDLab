@@ -21,6 +21,7 @@ OPTIONS="h"
 #- ENVIRONMENT IDENTIFICATION
 #===============================================================================
 PHDENV=$(dirname $(dirname $PWD))
+PHDVER=1.1
 
 if [[ $1 != "" ]]
    then PHDSYS=$1
@@ -50,6 +51,7 @@ done
 if [[ ! $(grep "# PhDLab" $HOME/.bash_profile) ]]
    then
 	   echo "# PhDLab"
+	   echo "export PHDVER=$PHDVER"
 case $PHDSYS in
      # For a VirtualBox machine with a Unix-type operating system using shared
      # folders.
@@ -63,22 +65,22 @@ case $PHDSYS in
      MAC | darwin)
           echo "export PHDSYS=MAC"
           echo "export PHDLAB=$PHDENV"
-          echo "export PHDENV=$PHDENV/src/Configuration/UNIX"
-          echo "export PHDSCR=$PHDENV/src/Library/Scriptlets"
+          echo "export PHDENV=$PHDLAB/src/Configuration/UNIX"
+          echo "export PHDSCR=$PHDLAB/src/Library/Scriptlets"
           ;;
 
     # For a Unix-type implementation.
     UNX | Linux) 
           echo "export PHDSYS=UNX"
-          echo "export PHDLAB=$PHDENV"
-          echo "export PHDENV=$PHDENV/src/Configuration/UNIX"
-          echo "export PHDSCR=$PHDENV/src/Library/Scriptlets"
+          echo "export PHDLAB=$PHDENV/PhDLab"
+          echo "export PHDENV=$PHDLAB/src/Configuration/UNIX"
+          echo "export PHDSCR=$PHDLAB/src/Library/Scriptlets"
           ;;
     # Generic
        *) echo "export PHDSYS=UNX"
-          echo "export PHDLAB=$PHDENV"
-          echo "export PHDENV=$PHDENV/src/Configuration/UNIX"
-          echo "export PHDSCR=$PHDENV/src/Library/Scriptlets"
+          echo "export PHDLAB=$PHDENV/PhDLab"
+          echo "export PHDENV=$PHDLAB/src/Configuration/UNIX"
+          echo "export PHDSCR=$PHDLAB/src/Library/Scriptlets"
           ;;
 esac
 echo "# PhDLab"
