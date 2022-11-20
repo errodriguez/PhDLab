@@ -51,38 +51,36 @@ if [[ ! $(grep "# PhDLab" $HOME/.bash_profile) ]]
    then
 	   echo "# PhDLab"
 case $PHDSYS in
-     VBX)
-#- For a VirtualBox machine with a Unix-type operating system using shared
-# folders.
-echo "export PHDSYS=VBX"
-echo "export PHDLAB=/media/sf_PhDLab"
-echo "export PHDENV=/media/sf_PhDLab/src/Configuration/UNIX"
-echo "export PHDSCR=/media/sf_PhDLab/src/Library/Scriptlets"
-;;
-      MAC | darwin)
+     # For a VirtualBox machine with a Unix-type operating system using shared
+     # folders.
+     VBX) echo "export PHDSYS=VBX"
+          echo "export PHDLAB=/media/sf_PhDLab"
+          echo "export PHDENV=/media/sf_PhDLab/src/Configuration/UNIX"
+          echo "export PHDSCR=/media/sf_PhDLab/src/Library/Scriptlets"
+          ;;
 
-#- For a Mac (with OS X or macOS) implementation.
-echo "export PHDSYS=MAC"
-echo "export PHDLAB=$PHDENV"
-echo "export PHDENV=$PHDENV/src/Configuration/UNIX"
-echo "export PHDSCR=$PHDENV/src/Library/Scriptlets"
-;;
+     # For a Mac (with OS X or macOS) implementation.
+     MAC | darwin)
+          echo "export PHDSYS=MAC"
+          echo "export PHDLAB=$PHDENV"
+          echo "export PHDENV=$PHDENV/src/Configuration/UNIX"
+          echo "export PHDSCR=$PHDENV/src/Library/Scriptlets"
+          ;;
 
+    # For a Unix-type implementation.
     UNX | Linux) 
-#- For a Unix-type implementation.
-echo "export PHDSYS=UNX"
-echo "export PHDLAB=$PHDENV"
-echo "export PHDENV=$PHDENV/src/Configuration/UNIX"
-echo "export PHDSCR=$PHDENV/src/Library/Scriptlets"
-;;
-    *) 
-#- Generic
-echo "export PHDSYS=UNX"
-echo "export PHDLAB=$PHDENV"
-echo "export PHDENV=$PHDENV/src/Configuration/UNIX"
-echo "export PHDSCR=$PHDENV/src/Library/Scriptlets"
-;;
+          echo "export PHDSYS=UNX"
+          echo "export PHDLAB=$PHDENV"
+          echo "export PHDENV=$PHDENV/src/Configuration/UNIX"
+          echo "export PHDSCR=$PHDENV/src/Library/Scriptlets"
+          ;;
+    # Generic
+       *) echo "export PHDSYS=UNX"
+          echo "export PHDLAB=$PHDENV"
+          echo "export PHDENV=$PHDENV/src/Configuration/UNIX"
+          echo "export PHDSCR=$PHDENV/src/Library/Scriptlets"
+          ;;
 esac
-	   echo "# PhDLab"
+echo "# PhDLab"
 fi >> $HOME/.bash_profile
 ###############################################################################
